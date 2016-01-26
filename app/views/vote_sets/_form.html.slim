@@ -1,4 +1,7 @@
-= form_for [noodle, noodle.vote_sets.new], html: { class: 'vote-set new' } do |vote_set_form|
-  .name = vote_set_form.text_field :name, placeholder: 'Name'
+= form_for [noodle, vote_set], data: { remote: true }, html: { class: 'pure-form vote-set new' } do |vote_set_form|
+  .name = vote_set_form.text_field :name, placeholder: 'Name', class: 'pure-input-1'
   - noodle.options.each do |option|
     = render 'options/form', vote_set_form: vote_set_form, option: option
+  .actions
+    = button_tag :submit, class: 'pure-button', title: 'Save' do
+      i.fa.fa-fw.fa-check

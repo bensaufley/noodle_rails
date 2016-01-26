@@ -1,3 +1,6 @@
 .vote-set
   .name = vote_set.name
-  = vote_set.votes
+  = render vote_set.votes
+  .actions
+    = link_to [vote_set.noodle, vote_set], data: { method: :delete, confirm: 'Are you sure you wish to delete these votes? This cannot be undone', remote: true } do
+      i.fa.fa-fw.fa-times

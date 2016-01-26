@@ -7,12 +7,33 @@
   .vote-set {
     display: table-row;
 
+    &:hover {
+      background-color: rgba(0, 0, 0, .08);
+    }
+
     .blank,
     .option,
     .name,
     .vote,
     .actions {
       display: table-cell;
+      padding: 3px 5px;
+      vertical-align: middle;
+    }
+  }
+
+  .vote,
+  .option,
+  .actions {
+    text-align: center;
+
+    label {
+      cursor: pointer;
+      display: block;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, .08);
+      }
     }
   }
 }
