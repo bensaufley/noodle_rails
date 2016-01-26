@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title Noodle
+    link rel='stylesheet' href='http://yui.yahooapis.com/pure/0.6.0/pure-min.css'
+    link rel='stylesheet' href='http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  body
+    header.pure-g
+      h1.pure-u-1-2.pure-u-md-1-5= link_to 'Noodle', root_path
+      nav.pure-u-1-2.pure-u-md-4-5.text-right
+        = link_to new_noodle_path, class: 'pure-button pure-button-primary' do
+          i.fa.fa-fw.fa-plus
+          | Create Noodle
+    main = yield
+    footer.text-center
+      = link_to 'I made this', 'http://bensaufley.com'
+    = javascript_include_tag 'application'
