@@ -1,0 +1,4 @@
+= form_for [noodle, noodle.vote_sets.new], html: { class: 'vote-set new' } do |vote_set_form|
+  .name = vote_set_form.text_field :name, placeholder: 'Name'
+  - noodle.options.each do |option|
+    = render 'options/form', vote_set_form: vote_set_form, option: option

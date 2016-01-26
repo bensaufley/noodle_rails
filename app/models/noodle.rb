@@ -1,7 +1,9 @@
 class Noodle < ActiveRecord::Base
   validates :name, :email, presence: true
   before_create :create_uuid
-  has_many :options
+  has_many :options, dependent: :destroy
+  has_many :vote_sets, dependent: :destroy
+  has_many :votes, through: :vote_sets
 
   default_scope { includes(:options) }
 

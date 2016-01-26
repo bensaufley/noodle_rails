@@ -1,4 +1,12 @@
-= form_for @option do |f|
-  fieldset
-    = f.text_field :text, placeholder: @option.class.human_attribute_name(:text), class: 'pure-input-1', required: 'required'
-  = f.submit
+.vote
+  = vote_set_form.fields_for :votes, vote_set_form.object.votes.new(option_id: option.id) do |vote_form|
+    = vote_form.hidden_field :option_id
+    = vote_form.label :value, value: 1 do
+      = vote_form.radio_button :value, 1
+      | Yes
+    = vote_form.label :value, value: 0 do
+      = vote_form.radio_button :value, 0
+      | Maybe
+    = vote_form.label :value, value: -1 do
+      = vote_form.radio_button :value, -1
+      | No

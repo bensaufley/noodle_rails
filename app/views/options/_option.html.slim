@@ -1,5 +1,4 @@
 .option
-  .text= option.text
-  .actions
-    = link_to noodle_option_path(option.noodle, option), class: 'pure-button button-error', title: 'Remove', data: { remote: true, method: :delete, confirm: 'Are you sure you\'d like to delete this option? This action cannot be undone.' } do
-      i.fa.fa-fw.fa-trash
+  = link_to noodle_option_path(option.noodle, option), title: 'Remove', data: { remote: true, method: :delete, confirm: 'Are you sure you\'d like to delete this option? This action cannot be undone.' } do
+    i.fa.fa-fw.fa-times
+  = option.text
