@@ -2,5 +2,7 @@
   .name = vote_set.name
   = render vote_set.votes.decorate
   .actions
+    = link_to edit_noodle_vote_set_path(vote_set.noodle, vote_set), class: 'edit-vote-set', title: 'Edit Vote Set' do
+      i.fa.fa-fw.fa-pencil
     = link_to [vote_set.noodle, vote_set], data: { method: :delete, confirm: 'Are you sure you wish to delete these votes? This cannot be undone', remote: true } do
       i.fa.fa-fw.fa-times

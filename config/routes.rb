@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :noodles do
     resources :options, only: [ :create, :update, :destroy ]
-    resources :vote_sets, only: [ :create, :update, :destroy ] do
+    resources :vote_sets, only: [ :edit, :create, :update, :destroy ] do
       resources :votes, only: [ :create, :update, :destroy ]
     end
   end

@@ -1,5 +1,5 @@
-.vote
-  = vote_set_form.fields_for :votes, vote_set_form.object.votes.new(option_id: option.id) do |vote_form|
+.vote class=vote.decorate.classname
+  = vote_set_form.fields_for :votes, vote do |vote_form|
     = vote_form.hidden_field :option_id
     = vote_form.label :value, value: 1 do
       = vote_form.radio_button :value, 1

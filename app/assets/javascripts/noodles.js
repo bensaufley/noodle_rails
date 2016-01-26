@@ -20,9 +20,21 @@
     }
   };
 
+  var editVoteSet = function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $.ajax({
+      url: this.href,
+      success: function(data) {
+        $this.closest('.vote-set').replaceWith(data.html);
+      }
+    });
+  };
+
   $(function() {
     $('main')
       .on('click tap', '#add-option', addOption)
+      .on('click tap', '.edit-vote-set', editVoteSet)
       .on('ajax:success', '.noodle', function(e, data) {
         if (data.html) { $(e.target).closest('.noodle').replaceWith(data.html); }
       })

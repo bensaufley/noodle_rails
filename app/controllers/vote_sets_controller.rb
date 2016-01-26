@@ -1,6 +1,14 @@
 class VoteSetsController < ApplicationController
   before_action :set_noodle
-  before_action :set_vote_set, only: [:update, :destroy]
+  before_action :set_vote_set, only: [:edit, :update, :destroy]
+
+  def edit
+    respond_to do |format|
+      format.any(:js, :json) do
+        render json: { status: :ok, html: render_to_string(partial: 'vote_sets/form', locals: { noodle: @noodle, vote_set: @vote_set }, formats: [:html])}
+      end
+    end
+  end
 
   # POST /vote_sets
   def create
