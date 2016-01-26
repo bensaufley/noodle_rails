@@ -1,0 +1,7 @@
+= form_for @noodle, html: { class: 'pure-form pure-form-aligned' } do |f|
+  fieldset
+    = f.email_field :email, placeholder: @noodle.class.human_attribute_name(:email), class: 'pure-input-1', required: 'required'
+    fieldset.pure-group
+      = f.text_field :name, placeholder: @noodle.class.human_attribute_name(:name), class: 'pure-input-1', required: 'required'
+      = f.text_area :description, placeholder: @noodle.class.human_attribute_name(:description), class: 'pure-input-1'
+    = f.submit class: 'pure-button pure-button-primary pure-input-1'

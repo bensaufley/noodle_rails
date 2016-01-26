@@ -1,0 +1,25 @@
+h1 Listing noodles
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Email
+      th
+      th
+      th
+
+  tbody
+    - @noodles.each do |noodle|
+      tr
+        td = noodle.name
+        td = noodle.description
+        td = noodle.email
+        td = link_to 'Show', noodle
+        td = link_to 'Edit', edit_noodle_path(noodle)
+        td = link_to 'Destroy', noodle, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Noodle', new_noodle_path
