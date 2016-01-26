@@ -3,7 +3,7 @@
     .blank
     = render noodle.options
     .actions
-      button.pure-button.pure-button-primary#add-option data-path=noodle_options_path(noodle) title='Add Option'
+      button.pure-button#add-option data-path=noodle_options_path(noodle) title='Add Option'
         i.fa.fa-fw.fa-plus
   = render noodle.vote_sets
   = render 'vote_sets/form', noodle: noodle, vote_set: noodle.vote_sets.new

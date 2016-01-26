@@ -32,5 +32,21 @@
         $this.closest('.vote').removeClass('yes maybe no')
           .addClass(val == 1 ? 'yes' : (val == -1 ? 'no' : 'maybe'));
       })
+      .on({
+        mouseenter: function(e) {
+          var $this = $(this),
+              $rows = $this.closest('.noodle').find('.header, .vote-set'),
+              $cells = $this.siblings('.blank, .option, .name, .vote, .actions').add($this),
+              index = $cells.index($this);
+          $cells.removeClass('hover');
+          $this.addClass('hover');
+          $rows.each(function() {
+            $(this).find('.blank, .option, .name, .vote, .actions').removeClass('hover').eq(index).addClass('hover');
+          });
+        },
+        mouseleave: function(e) {
+          $(this).closest('.noodle').find('.hover').removeClass('hover');
+        }
+      }, '.blank, .option, .name, .vote, .actions');
   });
 })(jQuery);

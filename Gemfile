@@ -11,6 +11,8 @@ gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 
+gem 'draper'
+
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
