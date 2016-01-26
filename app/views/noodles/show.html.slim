@@ -5,3 +5,5 @@ h2
     | Created by #{mail_to @noodle.email}
 - if @noodle.description.present?
   h4 = @noodle.description
+
+= render @noodle

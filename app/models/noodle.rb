@@ -1,6 +1,9 @@
 class Noodle < ActiveRecord::Base
   validates :name, :email, presence: true
   before_create :create_uuid
+  has_many :options
+
+  default_scope { includes(:options) }
 
   def to_param
     uuid

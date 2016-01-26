@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :noodles
+  resources :noodles do
+    resources :options, only: [ :create, :update, :destroy ]
+  end
 
   get 'faq', to: 'static_pages#faq'
 

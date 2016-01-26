@@ -1,8 +1,14 @@
 //= require jquery
 //= require jquery_ujs
+//= require noodles
 //= require_self
 
 (function($) {
+  'use strict';
+
+  $.ajaxSetup({
+    dataType: 'json'
+  });
 
   $(function() {
     $('<link>', {
