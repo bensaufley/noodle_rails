@@ -1,12 +1,12 @@
 .vote class=vote.decorate.classname
   = vote_set_form.fields_for :votes, vote do |vote_form|
     = vote_form.hidden_field :option_id
-    = vote_form.label :value, value: 1 do
+    = vote_form.label :value, value: 1, class: 'yes' do
       = vote_form.radio_button :value, 1
       |  Yes
-    = vote_form.label :value, value: 0 do
+    = vote_form.label :value, value: 0, class: 'maybe' do
       = vote_form.radio_button :value, 0
       |  Maybe
-    = vote_form.label :value, value: -1 do
+    = vote_form.label :value, value: -1, class: 'no' do
       = vote_form.radio_button :value, -1
       |  No

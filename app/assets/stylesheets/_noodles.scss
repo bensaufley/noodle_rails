@@ -74,14 +74,43 @@
   .vote {
     &.yes {
       background: rgba(100, 255, 0, .15);
+      color: mix(#000, rgb(100, 255, 0), 50%);
+
+      &.hover {
+        background: rgba(100, 255, 0, .5);
+      }
     }
 
     &.maybe {
       background: rgba(0, 100, 255, .15);
+      color: mix(#000, rgb(0, 100, 255), 50%);
+
+      &.hover {
+        background: rgba(0, 100, 255, .5);
+      }
     }
 
     &.no {
       background: rgba(255, 60, 0, .15);
+      color: mix(#000, rgb(255, 60, 0), 50%);
+
+      &.hover {
+        background: rgba(255, 60, 0, .5);
+      }
+    }
+
+    label {
+      &.yes {
+        color: mix(#000, rgb(100, 255, 0), 50%);
+      }
+
+      &.maybe {
+        color: mix(#000, rgb(0, 100, 255), 50%);
+      }
+
+      &.no {
+        color: mix(#000, rgb(255, 60, 0), 50%);
+      }
     }
   }
 }
