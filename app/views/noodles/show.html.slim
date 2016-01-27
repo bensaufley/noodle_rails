@@ -1,8 +1,8 @@
 h2
   = @noodle.name
-  small
-    br
-    | Created by #{mail_to @noodle.email}
+  /small
+  /  br
+  /  | Created by #{mail_to @noodle.email}
 - if @noodle.description.present?
   h4 = @noodle.description
 

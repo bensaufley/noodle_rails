@@ -27,17 +27,17 @@
 }
 
 .button-success {
-  background: rgb(28, 184, 65);
+  background: $green;
 }
 
 .button-error {
-  background: rgb(202, 60, 60);
+  background: $red;
 }
 
 .button-warning {
-  background: rgb(223, 117, 20);
+  background: $orange;
 }
 
 .button-secondary {
-  background: rgb(66, 184, 221);
+  background: $blue-secondary;
 }

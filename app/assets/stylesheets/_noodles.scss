@@ -60,56 +60,94 @@
   .option,
   .actions {
     text-align: center;
-
-    label {
-      cursor: pointer;
-      display: block;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, .08);
-      }
-    }
   }
 
   .vote {
+    font-size: .875em;
+    font-weight: bold;
+
+    &.picked {
+      padding: 1em 5px;
+    }
+
     &.yes {
-      background: rgba(100, 255, 0, .15);
-      color: mix(#000, rgb(100, 255, 0), 50%);
+      background: transparentize($green, .85);
+      color: mix(#000, $green, 50%);
 
       &.hover {
-        background: rgba(100, 255, 0, .5);
+        background: transparentize($green, .6);
       }
     }
 
     &.maybe {
-      background: rgba(0, 100, 255, .15);
-      color: mix(#000, rgb(0, 100, 255), 50%);
+      background: transparentize($primary-color, .85);
+      color: mix(#000, $primary-color, 50%);
 
       &.hover {
-        background: rgba(0, 100, 255, .5);
+        background: transparentize($primary-color, .6);
       }
     }
 
     &.no {
-      background: rgba(255, 60, 0, .15);
-      color: mix(#000, rgb(255, 60, 0), 50%);
+      background: transparentize($red, .85);
+      color: mix(#000, $red, 50%);
 
       &.hover {
-        background: rgba(255, 60, 0, .5);
+        background: transparentize($red, .6);
+      }
+    }
+
+    [type=radio] {
+      float: left;
+      height: 0;
+      margin-left: -3em;
+      opacity: 0;
+      overflow: hidden;
+      width: 0;
+
+      + label {
+        border-radius: 2px;
+        cursor: pointer;
+        display: block;
+        font-weight: normal;
+        opacity: .5;
+        padding: 2px;
+        transition: background .25s linear, color .25s linear;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &:checked + label {
+        font-weight: bold;
+        opacity: 1;
       }
     }
 
     label {
       &.yes {
-        color: mix(#000, rgb(100, 255, 0), 50%);
+        color: mix(#000, $green, 50%);
+
+        &:hover {
+          background: transparentize($green, .85);
+        }
       }
 
       &.maybe {
-        color: mix(#000, rgb(0, 100, 255), 50%);
+        color: mix(#000, $primary-color, 50%);
+
+        &:hover {
+          background: transparentize($primary-color, .85);
+        }
       }
 
       &.no {
-        color: mix(#000, rgb(255, 60, 0), 50%);
+        color: mix(#000, $red, 50%);
+
+        &:hover {
+          background: transparentize($red, .85);
+        }
       }
     }
   }
